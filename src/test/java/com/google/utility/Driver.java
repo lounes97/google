@@ -71,9 +71,9 @@ public class Driver {
 
                     //options.setBinary("\"C:\\Users\\zizou\\Downloads\\chrome-win64 (1)\\chrome-win64\\chrome.exe\"");
                     //driverPool.set(new ChromeDriver(options));
-                    ChromeOptions options = new ChromeOptions();
+                    //ChromeOptions options = new ChromeOptions();
                     //options.addExtensions(new File("extensions/dist.crx"));
-                    driverPool.set(new ChromeDriver(options));
+                    driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
