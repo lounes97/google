@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.URL;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 
 public class Driver {
     // Creating a private constructor, we are closing access to the
@@ -94,7 +94,7 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
             }
 
