@@ -73,13 +73,14 @@ public class Driver {
                     //driverPool.set(new ChromeDriver(options));
                     //ChromeOptions options = new ChromeOptions();
                     //options.addExtensions(new File("extensions/dist.crx"));
+                    // WebDriverManager.chromedriver().setup();
 
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
                     break;
-                case "chrome-headless":
+                case "chrome1":
 
                     //options.setBinary("\"C:\\Users\\zizou\\Downloads\\chrome-win64 (1)\\chrome-win64\\chrome.exe\"");
                     //driverPool.set(new ChromeDriver(options));
@@ -96,6 +97,12 @@ public class Driver {
                     driverPool.get().manage().window().setSize(new Dimension(1024,780));
                     driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+                    break;
+                case "chrome2":
+                    WebDriverManager.chromedriver().setup();
+                    driverPool.set(new ChromeDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
