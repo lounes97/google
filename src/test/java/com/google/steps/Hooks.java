@@ -2,8 +2,8 @@ package com.google.steps;
 
 
 import com.google.utility.ConfigurationReader;
-import com.google.utility.Driver;
 
+import com.google.utility.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
