@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -83,9 +84,14 @@ public class Driver {
                     //options.setBinary("\"C:\\Users\\zizou\\Downloads\\chrome-win64 (1)\\chrome-win64\\chrome.exe\"");
                     //driverPool.set(new ChromeDriver(options));
                     //ChromeOptions options = new ChromeOptions();
-                    //options.addExtensions(new File("extensions/dist.crx"));
+                    //options.addExtensions(new File("extensions/dist.crx"))
+                    ChromeOptions options=new ChromeOptions();
+                    options.addArguments("--headless");
+                    options.addArguments("--disable-gpu");
 
-                    driverPool.set(new ChromeDriver());
+
+                    driverPool.set(new ChromeDriver(options));
+
                     driverPool.get().manage().window().setSize(new Dimension(1024,780));
                     driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
