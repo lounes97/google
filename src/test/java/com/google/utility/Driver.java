@@ -86,7 +86,7 @@ public class Driver {
                     //driverPool.set(new ChromeDriver(options));
                     //ChromeOptions options = new ChromeOptions();
                     //options.addExtensions(new File("extensions/dist.crx"))
-                    WebDriverManager.chromedriver().setup();
+                    //WebDriverManager.chromedriver().setup();
                     ChromeOptions options=new ChromeOptions();
                     options.addArguments("--headless");
                     options.addArguments("--disable-gpu");
